@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .c {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        .a {
+            width: 50px;
+            aspect-ratio: 1;
+            background: red;
+            position: relative;
+           
+            /* transform: translate3d(0,0,0); */
+        }
+        .b {
+            position: absolute;
+            top: 5rem;
+            background: white;
+            width: 50px;
+            aspect-ratio: 1;
+            left: 50%;
+            transform: translate3d(-50%,0,0);
+            /* border-radius: 50px; */
+        }
+
+        .t {
+            transform: translate3d(250px, 300px, 0);
+            transition: transform 650ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="c"></div>
+    <div class="a"></div>
+    <div class="b"></div>
+</body>
+<script>
+    const { log } = console;
+    let a = document.querySelector(".a");
+    let f = a.getBoundingClientRect();
+    let s;
+    let id;
+    function an (t) {
+        if (!s) s = t;
+        let c = Math.min((t-s)/1000, 1);
+        let e = 1 - (Math.pow(1 - c, 3));
+        let d = 0 + (250 - 0) * e;
+        let d2 = 0 + (300 - 0) * e;
+        
+        if (c < 2) {
+            a.style.transform=`translate3d(${d}px, ${d2}px, 0)`;
+            requestAnimationFrame(an);
+        }
+    }
+    setTimeout(() => {
+        requestAnimationFrame(an);
+    },500)
+    let l = a.getBoundingClientRect();
+    let invertLeft = f.left - l.left;
+    let invertTop = f.top - l.top;
+  
+    requestAnimationFrame(() => {
+        a.style.transform=`translate3d(${invertLeft}px, ${invertTop}px, 0)`;
+        a.style.transform='';
+    })
+</script>
+<script>
+    let b = document.querySelector(".b");
+
+    let bf = b.getBoundingClientRect();
+
+    let bp;
+    function bn (t) {
+        if (!bp) bp = t;
+        let m = Math.min((t-bp)/1500, 1);
+        let e = 1 - (Math.pow(1-m,2));
+        let d = 0 + (50 - 0) * e;
+
+        if (m < 2) {
+            b.style.borderRadius = `${d}px`;
+            requestAnimationFrame(bn);
+        }
+    }
+
+    setTimeout(() => {
+        requestAnimationFrame(bn);
+    }, 500)
+
+    let bl = b.getBoundingClientRect();
+
+
+    let invert = bf.width + bl.width;
+
+    requestAnimationFrame(() => {
+        b.style.borderRadius = `${invert}px`;
+        b.style.borderRadius = "";
+    })
+</script>
+</html>

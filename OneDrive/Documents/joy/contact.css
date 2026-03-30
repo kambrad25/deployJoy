@@ -1,0 +1,403 @@
+@font-face {
+    font-family: "Bueno";
+    src: url("./public/font/Bueno\ Regular\ Free/OpenType-TT/Bueno-Regular.ttf");
+    font-weight: 400;
+}
+
+:root {
+    --main-font-family: "Bueno";
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: antialiased;
+    overscroll-behavior: none;
+    font-family: var(--main-font-family)
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4;
+    background-color: white;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.h {
+    overflow: hidden;
+}
+.hlii {
+    display: inline-block;
+}
+#app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    /* clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%); */
+    /* clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%) */
+
+}
+
+.t {
+    position: absolute;
+    top: 2rem;
+    right: 30px;
+    transform: translate3d(-50%, 0%, 0%);
+    text-transform: uppercase;
+}
+.t > * > h1 {
+    font-size: 1.5rem;
+    letter-spacing: -.5px;
+    /* width: min-content; */
+    font-family: var(--main-font-family);
+    text-align: center;
+    line-height: .9;
+    padding-top: .15rem;
+    transform: translate3d(0,100%,0)
+}
+.pre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    clip-path: inset(0% 0%);
+    z-index: 9999;
+    pointer-events: none;
+}
+.pr {
+    display: inline-block;
+    transform: translate3d(0,100%,0);
+}
+.f {
+    position: absolute;
+    bottom: 1rem;
+    left: 20px;
+    width: calc(100% - 50px);
+    overflow: hidden;
+}
+.f > * > * > h1 {
+    /* transform: translate3d(0,100%,0); */
+    text-transform: uppercase;
+    letter-spacing: -.1px;
+    line-height: 1;
+    /* transition: transform 650ms ease; */
+}
+
+.f > * > * > h1 > * {
+    transform: translate3d(0,110%,0);
+    display: inline-block;
+}
+.lu {
+    position: absolute;
+    border: 1px solid;
+    width: 30px;
+    left: 100px;
+    top: 50%;
+    transform: rotate(90deg) translate3d(0%,-50%,0)
+}
+
+.line {
+    position: fixed;
+    top: 3px;
+    width: 100%;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    max-width: 0%;
+    background-color: black;
+    height: 2px;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+    color: white;
+}
+.hl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* padding-top: 2rem; */
+}
+.hl > * {
+    width: min-content;
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    padding-top: .1rem;
+}
+.hl > * > * {
+    pointer-events: all;
+    border-bottom: 1px solid;
+    line-height: .8;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.6rem;
+    letter-spacing: -.3px;
+    transform: translate3d(0,110%,0);
+    will-change: transform;
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+}
+
+.tt {
+    position: absolute;
+    top: 2.5rem;
+    right: 16rem;
+}
+.tt > * > * {
+    font-weight: 100;
+    letter-spacing: -.2px;
+    line-height: 1;
+    padding-top: 1rem;
+    border-bottom: 1px solid;
+    transform: translate3d(0,110%,0);
+    will-change: transform;
+}
+
+.tl {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.tl > * {
+    list-style: none;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.tl > * > * > * > a {
+    display: block;
+    transform: translate3d(0,110%,0);
+    will-change: transform;
+    font-weight: 600;
+}
+.yy {
+    bottom: 1rem;
+    right: 20px;
+    font-size: 1.2rem;
+    position: absolute;
+    padding-bottom: 1rem;
+}
+.yy > .h {
+    line-height: 1;
+}
+.yy > * > * {
+    transform: translate3d(0,110%,0);
+    will-change: transform;
+}
+.oph {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    pointer-events: none;
+    /* opacity: 1; */
+}
+.oph > * {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+.oph > * > * > h2 {
+    font-size: 1.5rem;
+    color: #6c3f3f;
+    transform: translate3d(0,150%,0);
+    will-change: transform;
+    font-weight: 600;
+}
+.bez {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: grid;
+    place-content: center;
+}
+.bez > .con {
+    /* border: 1px solid; */
+    position: relative;
+    height: calc(100% + 3rem);
+}
+.bez > * > * {
+    line-height: .8;
+    padding-top: .2rem;
+    font-size: 1.3rem;
+}
+.bez > * > * > h1 {
+    font-weight: 100;
+    letter-spacing: -.4px;
+    transform: translate3d(0,150%,0);
+    will-change: transform;
+}
+.fo {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    color: black;
+}
+.fo > * {
+    border-radius: 50px;
+    padding: 1rem;
+    border: 1px solid black;
+    line-height: .5;
+    cursor: pointer;
+    pointer-events: all;
+    outline: none;
+    opacity: 0;
+}
+.fo > *:focus {
+    outline: none;
+    border: none;
+}
+.fo > * > * {
+    padding-top: 1rem;
+    letter-spacing: -.95px;
+    padding-right: .1rem;
+    color: black;
+}
+.fo > * > * > span{
+    display: inline-block;
+    line-height: 1;
+    transform: translate3d(0,110%,0);
+    color: black;
+}
+
+.frn {
+    position: absolute;
+    top: 10rem;
+    left: 2rem;
+    padding-top: .2rem;
+}
+.frn > * {
+    line-height: .4;
+    padding-top: .7rem;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    letter-spacing: -.3px;
+}
+/* f1 */
+.frn > * > h2 {
+    font-weight: 100;
+    transform: translate3d(0,250%,0);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+.frt {
+    position: absolute;
+    top: calc(10rem + 90px);
+    right: 20px;
+    line-height: .8;
+}
+.frt > * {
+    padding-top: .15rem;
+}
+
+/* f2 */
+.frt > * > p {
+    color:white;
+    border-bottom: 1px solid;
+    transform: translate3d(0,150%,0);
+    will-change: transform;
+}
+.frtn {
+    position: absolute;
+    top: 40%;
+    left: 2rem;
+    line-height: .8;
+    /* border: 1px solid; */
+    width: calc(100% - 10rem);
+}
+.frtn > *{
+    padding-top: .3rem;
+}
+/* f3 */
+.frtn >*> *> h3 {
+    display: inline-block;
+    font-weight: 1;
+    transform: translate3d(0,350%,0);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+/* f4 */
+.fot {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+    width: calc(100% - 3rem);
+    height: 25rem;
+    color: white;
+    opacity: 0;
+    will-change: opacity;
+}
+.fot > .form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    position: relative;
+}
+.fot > .form > * {
+    align-content: center;
+}
+.fot > .form > * > * {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding-top: .95rem;
+    padding-bottom: .6rem;
+    padding-left: .4rem;
+    align-content: center;
+    color: white;
+    font-size: 1.3rem;
+}
+.fot > .form > * > *:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.fot > .form > * > button {
+    background-color:#6c3f3f;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    position: absolute;
+}
+@media (max-width: 300px) {
+    .oph > * > * > h2 {
+        font-size: 5vw;
+    }
+}

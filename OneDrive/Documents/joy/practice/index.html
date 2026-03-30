@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMap</title>
+    <meta name="Content-Security-Policy" content="script-src 'self'; style-src 'unsafe-inline'"/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            font-size: 1.6rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgba(111, 96, 96,1);
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            padding: 0 2rem;
+            border: 2px solid red;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .content {
+            pointer-events: all;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .hide {
+            overflow: hidden;
+        }
+        .hide > * {
+            transform: translate3d(0,100%,0);
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+        }
+        .logo {
+            position: absolute;
+            top: 50px;
+            left: 30px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 100;
+        }
+        .links {
+            display: flex;
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            gap: 2rem;
+            text-transform: uppercase;
+            font-weight: 100;
+            pointer-events: all;
+        }
+        .links > a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="content">
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+       </div>
+          <div class="content">
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+       </div>
+          <div class="content">
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+       </div>
+       <div class="content">
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+       </div>
+       <div class="content">
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+       </div>
+       <div class="content">
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="hide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+       </div>
+       
+       <nav>
+            <div class="logo">
+                <h1>logo</h1>
+            </div>
+
+            <div class="links">
+                <a href="index.html">home</a>
+                <a href="main.html">main</a>
+            </div>
+       </nav>
+    </div>
+
+    <script>
+        const { log } = console;
+
+        let s;
+        let id;
+        function a(t) {
+            if (!s) s=t;
+            // let m = Math.min(Math.max(0, (t-s)/600),1);
+            let m = Math.min((t-s)/550, 1);
+            let e = easeOutCirc(m);
+            let d = 100 + (0 - 100) * e;
+            if (m < 1) {
+                document.querySelectorAll(".hide > *").forEach((u, idx) => {
+                    setTimeout(() => {
+                        u.style.transform=`translate3d(0,${d}%,0)`
+                    }, idx * 100);
+                })
+                id=requestAnimationFrame(a);
+            }
+        }
+        
+        if (id !== null) {
+            id = requestAnimationFrame(a);
+
+            setTimeout(() => {
+                cancelAnimationFrame(id);
+            }, 600)
+        }
+
+
+
+        function easeOutCirc(x) {
+            return Math.sqrt(1 - Math.pow(x - 1, 2));
+        }
+
+
+ 
+        let container = document.querySelector(".container");
+        document.addEventListener("click", (e) => {
+            if (!e.target.matches(".links > *")) return;
+            e.preventDefault();
+            let target = e.target.href;;
+            window.history.pushState(null, null, target);
+
+
+            requestAnimation();
+            route()
+        }, { passive: false});
+
+        async function route () {
+            let pathname = window.location.pathname;
+            let origin = window.location.origin;
+            let url = new URL(pathname, origin);
+            url = url.href;
+            
+            let html = await fetch(url);
+            let text = await html.text();
+
+            document.querySelectorAll(".content").forEach((u) => {
+                u.remove()
+            })
+            container.insertAdjacentHTML("beforeend", text);
+        }
+
+        function requestAnimation () {
+            id = requestAnimationFrame(a);
+            s = null;
+
+
+            setTimeout(() => {
+                cancelAnimationFrame(id);
+            }, 600);
+        }
+    </script>
+    <!-- <script type="text/javascript" src="./index.js"></script> -->
+</body>
+</html>

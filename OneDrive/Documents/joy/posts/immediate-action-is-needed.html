@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .h {
+            /* display: inline; */
+            white-space: nowrap;
+            font-size: 3vw;
+        }
+        .ais {
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="thd">
+            <div class="thdt">
+                <div class="h">
+                    <h4>Action Is Needed</h4>
+                </div>
+            </div>
+            <div class="shdt">
+                <div class="h">
+                    <p>november 28, 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+            <div class="p1 ais"><div class="h"><p>I just had a disturbing call from Rev. Joy</p></div><div class="h"><p>Powell, about incidents which occurred over the course of</p></div><div class="h"><p>the last two days that may or may not</p></div><div class="h"><p>have been intentionally perpetrated by state employees, but nonetheless</p></div><div class="h"><p>have resulted in injuries to Rev. Joy’s hand, her</p></div><div class="h"><p>arm, and other parts of her body, for which</p></div><div class="h"><p>she also explained her concerns about her wrist which</p></div><div class="h"><p>had already been fractured on multiple occasions before, and</p></div><div class="h"><p>yet she is being denied medical attention she was</p></div><div class="h"><p>promised by staff officer’s on duty she would get</p></div><div class="h"><p>and hasn’t.</p></div></div>
+            <div class="p2 ais"><div class="h"><p>A member of the National Guard is the person</p></div><div class="h"><p>responsible for multiple injuries, which happened in two separate</p></div><div class="h"><p>incidents but involved facility movement where a gate and</p></div><div class="h"><p>door were closed without warning before Rev. Joy had</p></div><div class="h"><p>safely cleared from the entrance in question. The person’s</p></div><div class="h"><p>last name responsible is Johnson, he is a part</p></div><div class="h"><p>of military reservist unit assigned to that facility.</p></div></div>
+    </div>    
+</body>
+<script>
+    const { log } = console;
+    let p1 = document.querySelector(".p1");
+    let p2 = document.querySelector(".p2");
+    let p3 = document.querySelector(".p3");
+
+    let str1 = "A member of the National Guard is the person responsible for multiple injuries, which happened in two separate incidents but involved facility movement where a gate and door were closed without warning before Rev. Joy had safely cleared from the entrance in question. The person’s last name responsible is Johnson, he is a part of military reservist unit assigned to that facility."
+    let str2 = "The following details events that occurred yesterday involving a male officer along with several other officers who are frequently accused of verbal and physical assaults of barbaric and terroristic behaviors in his role as a corrections officer. In spite of numerous grievances, resident’s concerns voiced through in-house channels, as well as those complaints lodged by resident’s family and friends to official channels, the violations of both mental and physical assaults persist nonetheless. New York State’s Bedford Hills C.F. was built in 1901, and it’s long history of abuses is undeniable, and even more so is the lack of accountability from its leadership whose salaries are paid by the citizen’s of that state, and those of the United States when one considers the federal subsidies it receives every year but clearly somehow feels it is accountable to that same citizenry.";
+    let str3 = "Case in point yesterday, 11/30/2025 around 10:41am, (EST) Resident Rev. Joy Powell (07G0632) and other residents were taking showers, and they were completely naked as Rev. Powell was exiting the shower when officer Palencia entered unannounced and refused to leave the area. He, in pursuit of another resident, was threatening to mace everyone in the shower area. As already stated, Officer Palencia, whose name comes up frequently, has a reputation as a woman-beater, and is involved in frequent attacks upon the very incarcerated individuals he swore an oath to protect. Rev. Powell, an elder at Bedford Hills, experienced severe anxiety attacks along with others who were also showering due to his behavior. Officer Palencia’s actions violated both facility protocols and DOCCS policies by refusing to announce himself or choose alternative actions (such as requesting aid of a female colleague).";
+
+    str1 = str1.split(" ");
+    str2 = str2.split(" ");
+    str3 = str3.split(" ");
+
+   let str = "";
+   let start = 0;
+   let end = 9;
+    
+
+//    str += str1.slice(start,end).join(" ");;
+
+   while (end < str1.length + 10) {
+    let h = document.createElement("div");
+    h.className = "h";
+    let p = document.createElement("p");
+    p.textContent= str1.slice(start,end).join(" ");
+
+    start = end;
+    end += 9;
+    h.append(p);
+
+    // p1.append(h);
+    // p2.append(h)
+    
+   }
+
+
+   log (p2);
+   
+   
+
+   async function response () {
+    let str = await fetch(window.location.href);
+    let res = await str.text();
+
+  
+    log (res);
+   }
+
+
+</script>
+</html>

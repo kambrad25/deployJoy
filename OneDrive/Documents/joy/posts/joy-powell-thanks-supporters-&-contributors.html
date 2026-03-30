@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .h {
+            /* display: inline; */
+            white-space: nowrap;
+            font-size: 3vw;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="con">
+         <div class="thd">
+            <div class="thdt">
+                <div class="h">
+                    <h4 class="min">Supporters & Contributors</h4>
+                </div>
+            </div>
+            <div class="shdt">
+                <div class="h">
+                    <p>february 21, 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+            <div class="aa">
+                <img src="https://i0.wp.com/freejoypowell.org/wp-content/uploads/2025/02/image0000012-1024x726.png?resize=640%2C454&ssl=1"/>
+            </div>
+        </div>
+    </div>    
+</body>
+<script>
+    const { log } = console;
+    let p1 = document.querySelector(".p1");
+    let p2 = document.querySelector(".p2");
+    let p3 = document.querySelector(".p3");
+
+    let str1 = "It takes a real man to be a great Father, and I would like to wish all of you wonderful fathers a wonderful Fathers Day. And, may you see many, many more Fathers Days, Grand Fathers Days, and Great Fathers Days.";
+    let str2 = "The following details events that occurred yesterday involving a male officer along with several other officers who are frequently accused of verbal and physical assaults of barbaric and terroristic behaviors in his role as a corrections officer. In spite of numerous grievances, resident’s concerns voiced through in-house channels, as well as those complaints lodged by resident’s family and friends to official channels, the violations of both mental and physical assaults persist nonetheless. New York State’s Bedford Hills C.F. was built in 1901, and it’s long history of abuses is undeniable, and even more so is the lack of accountability from its leadership whose salaries are paid by the citizen’s of that state, and those of the United States when one considers the federal subsidies it receives every year but clearly somehow feels it is accountable to that same citizenry.";
+    let str3 = "Case in point yesterday, 11/30/2025 around 10:41am, (EST) Resident Rev. Joy Powell (07G0632) and other residents were taking showers, and they were completely naked as Rev. Powell was exiting the shower when officer Palencia entered unannounced and refused to leave the area. He, in pursuit of another resident, was threatening to mace everyone in the shower area. As already stated, Officer Palencia, whose name comes up frequently, has a reputation as a woman-beater, and is involved in frequent attacks upon the very incarcerated individuals he swore an oath to protect. Rev. Powell, an elder at Bedford Hills, experienced severe anxiety attacks along with others who were also showering due to his behavior. Officer Palencia’s actions violated both facility protocols and DOCCS policies by refusing to announce himself or choose alternative actions (such as requesting aid of a female colleague).";
+
+    str1 = str1.split(" ");
+    str2 = str2.split(" ");
+    str3 = str3.split(" ");
+
+   let str = "";
+   let start = 0;
+   let end = 9;
+    
+
+//    str += str1.slice(start,end).join(" ");;
+
+   while (end < str1.length + 10) {
+    let h = document.createElement("div");
+    h.className = "h";
+    let p = document.createElement("p");
+    p.textContent= str1.slice(start,end).join(" ");
+
+    start = end;
+    end += 9;
+    h.append(p);
+
+    // p1.append(h);
+    // p1.append(h)
+    
+   }
+
+
+   
+   
+
+   async function response () {
+    let str = await fetch(window.location.href);
+    let res = await str.text();
+
+  
+    log (res);
+   }
+
+
+</script>
+</html>
